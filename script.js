@@ -17,9 +17,9 @@ function loadcard() {
 
     let create_card = document.createElement("div");
 
-    create_card.classList.add("card");
+    create_card.innerHTML = `<span class="w-name"><a href="${web_url_value}">${web_name_value}</a></span><span class="w-url"><a href="${web_url_value}">${web_url_value}</a></span>`;
 
-    create_card.innerHTML = `<span class="w-name">${stored_name}</span><span class="w-url">${stored_url}</span>`;
+    create_card.classList.add("card");
 
     placer.append(create_card);
   }
@@ -38,9 +38,9 @@ function inject_sites() {
 
   let create_card = document.createElement("div");
 
-  create_card.classList.add("card");
+  create_card.innerHTML = `<span class="w-name">${stored_name}</span><span class="w-url">${stored_url}</span>`;
 
-  create_card.innerHTML = `<span class="w-name"><a href="${web_url_value}">${web_name_value}</a></span><span class="w-url"><a href="${web_url_value}">${web_url_value}</a></span>`;
+  create_card.classList.add("card");
 
   placer.append(create_card);
 
