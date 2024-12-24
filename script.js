@@ -5,7 +5,31 @@ let web_url = document.getElementById("web-url");
 let push_btn = document.getElementById("web-push");
 let placer = document.querySelector(".placer");
 
+function loadcard() {
+  if (localStorage.length === 0) {
+    console.log("Failed to load load or no data INIT");
+    return;
+  }
+
+  for (let l = 0; l < localStorage.length; l++) {
+
+    let stored_name = localStorage.key(l);
+    let stored_url = localStorage.getItem(stored_name);
+
+    let create_card = document.createElement("div");
+
+    create_card.classList.add("card");
+
+    create_card.innerHTML = `<span class="w-name">${stored_name}</span><span class="w-url">${stored_url}</span>`;
+
+    placer.append(create_card);
+  }
+}
+
+loadcard();
+
 function inject_sites() {
+
   let web_name_value = web_name.value;
   let web_url_value = web_url.value;
 
@@ -22,29 +46,7 @@ function inject_sites() {
 
   placer.append(create_card);
 
-  storeToLocalStorage(web_name_value, web_url_value)
-
+  localStorage.setItem(web_name_value, web_url_value);
 }
 
-push_btn.addEventListener("click", inject_sites)
-
-function storecard(web_name, web_url) {
-  let web_name_value = web_name.value;
-  let web_url_value = web_url.value;
-
-  let storage = []
-
-  
-}
-
-
-// let axs = []
-// console.log(axs);
-
-// function pume(axs) {
-//     let b = "saidur"
-//     axs.push(b)
-//     console.log(axs)
-// }
-
-// pume()
+push_btn.addEventListener("click", inject_sites);
