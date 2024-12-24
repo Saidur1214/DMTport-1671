@@ -12,7 +12,6 @@ function loadcard() {
   }
 
   for (let l = 0; l < localStorage.length; l++) {
-
     let stored_name = localStorage.key(l);
     let stored_url = localStorage.getItem(stored_name);
 
@@ -29,7 +28,6 @@ function loadcard() {
 loadcard();
 
 function inject_sites() {
-
   let web_name_value = web_name.value;
   let web_url_value = web_url.value;
 
@@ -43,6 +41,7 @@ function inject_sites() {
   create_card.classList.add("card");
 
   create_card.innerHTML = `<span class="w-name">${web_name_value}</span><span class="w-url">${web_url_value}</span>`;
+  create_card.innerHTML = `<span class="w-name"><a href="${web_url_value}">${web_name_value}</a></span><span class="w-url"><a href="${web_url_value}">${web_url_value}</a></span>`;
 
   placer.append(create_card);
 
