@@ -17,7 +17,7 @@ function loadcard() {
 
     let create_card = document.createElement("div");
 
-    create_card.innerHTML = `<span class="w-name"><a href="${web_url_value}">${web_name_value}</a></span><span class="w-url"><a href="${web_url_value}">${web_url_value}</a></span>`;
+    create_card.innerHTML = `<span class="w-name"><a href="https://${web_url_value}">${web_name_value}</a></span><span class="w-url"><a href="${web_url_value}">${web_url_value}</a></span>`;
 
     create_card.classList.add("card");
 
