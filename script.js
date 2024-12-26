@@ -38,7 +38,7 @@ function inject_sites() {
 
   let create_card = document.createElement("div");
 
-  create_card.innerHTML = `<span class="w-name">${stored_name}</span><span class="w-url">${stored_url}</span>`;
+  create_card.innerHTML = `<span class="w-name">${web_name_value}</span><span class="w-url">${web_url_value}</span>`;
 
   create_card.classList.add("card");
 
